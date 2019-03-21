@@ -1,0 +1,3 @@
+Ativar virtualenv para rodar o tensorflow:
+
+$ .\venv\Scripts\activate

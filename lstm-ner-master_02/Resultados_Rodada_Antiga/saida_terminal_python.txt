@@ -1,0 +1,108 @@
+ RESTART: C:\Users\leoni\OneDrive\Códigos Yago\TCCYAGO\lstm-ner-master\lstm_ner\__main__.py 
+Using TensorFlow backend.
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\leoni\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+train sentences: 20
+test sentences: 4
+Traceback (most recent call last):
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\client\session.py", line 1334, in _do_call
+    return fn(*args)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\client\session.py", line 1317, in _run_fn
+    self._extend_graph()
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\client\session.py", line 1352, in _extend_graph
+    tf_session.ExtendSession(self._session)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: No OpKernel was registered to support Op 'CudnnRNN' with these attrs.  Registered devices: [CPU], Registered kernels:
+  <no registered kernels>
+
+	 [[{{node cu_dnnlstm_1/CudnnRNN}} = CudnnRNN[T=DT_FLOAT, direction="unidirectional", dropout=0, input_mode="linear_input", is_training=true, rnn_mode="lstm", seed=87654321, seed2=0](cu_dnnlstm_1/transpose, cu_dnnlstm_1/ExpandDims_1, cu_dnnlstm_1/ExpandDims_2, cu_dnnlstm_1/concat_1)]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\leoni\OneDrive\Códigos Yago\TCCYAGO\lstm-ner-master\lstm_ner\__main__.py", line 239, in <module>
+    main()
+  File "C:\Users\leoni\OneDrive\Códigos Yago\TCCYAGO\lstm-ner-master\lstm_ner\__main__.py", line 161, in main
+    model = load_model(model_file)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\saving.py", line 419, in load_model
+    model = _deserialize_model(f, custom_objects, compile)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\saving.py", line 287, in _deserialize_model
+    K.batch_set_value(weight_value_tuples)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\backend\tensorflow_backend.py", line 2470, in batch_set_value
+    get_session().run(assign_ops, feed_dict=feed_dict)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\backend\tensorflow_backend.py", line 199, in get_session
+    [tf.is_variable_initialized(v) for v in candidate_vars])
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\client\session.py", line 929, in run
+    run_metadata_ptr)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\client\session.py", line 1152, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\client\session.py", line 1328, in _do_run
+    run_metadata)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\client\session.py", line 1348, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: No OpKernel was registered to support Op 'CudnnRNN' with these attrs.  Registered devices: [CPU], Registered kernels:
+  <no registered kernels>
+
+	 [[node cu_dnnlstm_1/CudnnRNN (defined at C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\contrib\cudnn_rnn\python\ops\cudnn_rnn_ops.py:922)  = CudnnRNN[T=DT_FLOAT, direction="unidirectional", dropout=0, input_mode="linear_input", is_training=true, rnn_mode="lstm", seed=87654321, seed2=0](cu_dnnlstm_1/transpose, cu_dnnlstm_1/ExpandDims_1, cu_dnnlstm_1/ExpandDims_2, cu_dnnlstm_1/concat_1)]]
+
+Caused by op 'cu_dnnlstm_1/CudnnRNN', defined at:
+  File "<string>", line 1, in <module>
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\idlelib\run.py", line 144, in main
+    ret = method(*args, **kwargs)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\idlelib\run.py", line 474, in runcode
+    exec(code, self.locals)
+  File "C:\Users\leoni\OneDrive\Códigos Yago\TCCYAGO\lstm-ner-master\lstm_ner\__main__.py", line 239, in <module>
+    main()
+  File "C:\Users\leoni\OneDrive\Códigos Yago\TCCYAGO\lstm-ner-master\lstm_ner\__main__.py", line 161, in main
+    model = load_model(model_file)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\saving.py", line 419, in load_model
+    model = _deserialize_model(f, custom_objects, compile)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\saving.py", line 225, in _deserialize_model
+    model = model_from_config(model_config, custom_objects=custom_objects)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\saving.py", line 458, in model_from_config
+    return deserialize(config, custom_objects=custom_objects)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\layers\__init__.py", line 55, in deserialize
+    printable_module_name='layer')
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\utils\generic_utils.py", line 145, in deserialize_keras_object
+    list(custom_objects.items())))
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\network.py", line 1022, in from_config
+    process_layer(layer_data)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\network.py", line 1008, in process_layer
+    custom_objects=custom_objects)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\layers\__init__.py", line 55, in deserialize
+    printable_module_name='layer')
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\utils\generic_utils.py", line 145, in deserialize_keras_object
+    list(custom_objects.items())))
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\sequential.py", line 301, in from_config
+    model.add(layer)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\sequential.py", line 165, in add
+    layer(x)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\layers\recurrent.py", line 532, in __call__
+    return super(RNN, self).__call__(inputs, **kwargs)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\engine\base_layer.py", line 457, in __call__
+    output = self.call(inputs, **kwargs)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\layers\cudnn_recurrent.py", line 90, in call
+    output, states = self._process_batch(inputs, initial_state)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\keras\layers\cudnn_recurrent.py", line 517, in _process_batch
+    is_training=True)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\contrib\cudnn_rnn\python\ops\cudnn_rnn_ops.py", line 1544, in __call__
+    input_data, input_h, input_c, params, is_training=is_training)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\contrib\cudnn_rnn\python\ops\cudnn_rnn_ops.py", line 1435, in __call__
+    seed=self._seed)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\contrib\cudnn_rnn\python\ops\cudnn_rnn_ops.py", line 922, in _cudnn_rnn
+    outputs, output_h, output_c, _ = gen_cudnn_rnn_ops.cudnn_rnn(**args)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\ops\gen_cudnn_rnn_ops.py", line 144, in cudnn_rnn
+    is_training=is_training, name=name)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\util\deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\ops.py", line 3274, in create_op
+    op_def=op_def)
+  File "C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\ops.py", line 1770, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+InvalidArgumentError (see above for traceback): No OpKernel was registered to support Op 'CudnnRNN' with these attrs.  Registered devices: [CPU], Registered kernels:
+  <no registered kernels>
+
+	 [[node cu_dnnlstm_1/CudnnRNN (defined at C:\Users\leoni\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\contrib\cudnn_rnn\python\ops\cudnn_rnn_ops.py:922)  = CudnnRNN[T=DT_FLOAT, direction="unidirectional", dropout=0, input_mode="linear_input", is_training=true, rnn_mode="lstm", seed=87654321, seed2=0](cu_dnnlstm_1/transpose, cu_dnnlstm_1/ExpandDims_1, cu_dnnlstm_1/ExpandDims_2, cu_dnnlstm_1/concat_1)]]
